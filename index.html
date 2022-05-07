@@ -15,7 +15,7 @@
         <div class="container">
             <div class="items">
                 
-                <div v-for="item in sliderItems" class="item active">
+                <div v-for="(item, index) in sliderItems" class="item":class="index === currentSlide ? 'active' : ''">
                     <img :src="item.image" alt="">
                     <div class="text">
                         <h3>{{ item.title }}</h3>
@@ -24,15 +24,17 @@
                 </div>
                
             </div>
-            <!-- <div class="thumbs">
+            <div class="thumbs">
+                <div @click="nextSlide" class="prev"></div>
                 
-                <div class="thumb active">
-                    <img src="img/01.jpg" alt="">
+                <div v-for="(item, index) in sliderItems">
+                    <div class="thumb" :class="index === currentSlide ? 'active' : ''">
+                        <img :src="item.image" alt="">
+                    </div>
                 </div>
-               
-                <div class="prev"></div>
-                <div class="next"></div>
-            </div> -->
+                
+                <div @click="prevSlide" class="next"></div>
+            </div>
         </div>
     </div>
 

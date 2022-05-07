@@ -36,9 +36,15 @@ const app = new Vue (
             ],
             currentSlide: 0,
         },
-
+        
         methods: {
-            
-        },
+            nextSlide: function() {
+                this.currentSlide === this.currentSlide == 0 ? this.sliderItems.length - 1 : this.currentSlide--;
+            },
+
+            prevSlide: function() {
+                this.currentSlide == this.currentSlide == 0 ? this.sliderItems.length - 1 : this.currentSlide++;
+            }
+        }
     }
 )
