@@ -25,15 +25,18 @@
                
             </div>
             <div class="thumbs">
-                <div @click="nextSlide" class="prev"></div>
+                <div @click="prevSlide" class="prev"></div>
                 
-                <div v-for="(item, index) in sliderItems">
-                    <div class="thumb" :class="index === currentSlide ? 'active' : ''">
+                <!--BLOCCO DA COMMENTARE SE SI USA LO SCRIPT DI JS PURO-->
+               <div v-for="(item, index) in sliderItems" class="thumb" :class="index === currentSlide ? 'active' : ''">
+                   <div class="thumb" :class="index === currentSlide ? 'active' : ''">
                         <img :src="item.image" alt="">
-                    </div>
+                    </div> 
                 </div>
+                <!--/BLOCCO DA COMMENTARE SE SI USA LO SCRIPT DI JS PURO-->
+
                 
-                <div @click="prevSlide" class="next"></div>
+                <div @click="nextSlide" class="next"></div>
             </div>
         </div>
     </div>

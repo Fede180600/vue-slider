@@ -39,11 +39,11 @@ const app = new Vue (
         
         methods: {
             nextSlide: function() {
-                this.currentSlide === this.currentSlide == 0 ? this.sliderItems.length - 1 : this.currentSlide--;
+                this.currentSlide !== (this.sliderItems.length - 1) ? this.currentSlide++ : this.currentSlide = 0;
             },
 
             prevSlide: function() {
-                this.currentSlide == this.currentSlide == 0 ? this.sliderItems.length - 1 : this.currentSlide++;
+                this.currentSlide ===  0 ? this.currentSlide = this.sliderItems.length - 1 : this.currentSlide--;
             }
         }
     }

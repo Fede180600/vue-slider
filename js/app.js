@@ -33,10 +33,9 @@ for (let i = 0; i < images.length; i++) {
     });
 }
 
-console.log(data);
 
 const itemsContainer  = document.querySelector('.items');
-const thumbsContainer = document.getElementsByClassName('thumbs')[0]; // document.querySelector('.thumbs')
+const thumbsContainer = document.querySelector('.thumbs')
 let currentSlide      = 0; // ci posizioniamo sulla prima slide
 
 createItems();
@@ -87,8 +86,8 @@ function createItems() {
         let elem = data[i];
 
         // aggiungiamo la classe active alla prima slide (currentSlide = 0)
-        let firstActive = '';
-        if (i == currentSlide) {
+        let firstActive;
+        if (i == currentSlide ) {
             firstActive = 'active';
         }
 
